@@ -4,3 +4,5 @@ models analyze patient data to provide insights and improve diagnostic accuracy.
 
 This project predicts lung cancer severity using machine learning algorithms. It includes Multinomial Regression, Random Forest, Naive Bayes, K-Nearest Neighbors (KNN), and Support Vector Machine (SVM) for classification. The models analyze patient data to provide insights and improve diagnostic accuracy. 
 models analyze patient data to provide insights and improve diagnostic accuracy.
+This project predicts lung cancer severity using machine learning algorithms. It includes Multinomial Regression, Random Forest, Naive Bayes, K-Nearest Neighbors (KNN), and Support Vector Machine (SVM) for classification. The models analyze patient data to provide insights and improve diagnostic accuracy. 
+models analyze patient data to provide insights and improve diagnostic accuracy.
