@@ -1,0 +1,193 @@
+[
+  {
+    "id": 1,
+    "title": "Cloud Policy V1",
+    "content": "All databases can run on single-AZ for cost savings. Backups are optional for dev environments. API servers should run on T2.micro instances.",
+    "metadata": {
+      "version": "1.0",
+      "status": "DEPRECATED",
+      "deprecated_date": "2022-03-15",
+      "replaced_by": 2,
+      "applies_to": ["development", "staging"],
+      "security_level": "internal"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Cloud Policy V2",
+    "content": "Production databases must utilize Multi-AZ deployment for high availability. Backups must be taken every 6 hours and retained for 30 days in immutable S3 buckets. All production workloads require encryption at rest using KMS.",
+    "metadata": {
+      "version": "2.0",
+      "status": "CURRENT",
+      "effective_date": "2024-01-01",
+      "supersedes": 1,
+      "applies_to": ["production"],
+      "security_level": "internal",
+      "compliance_tags": ["SOC2", "HIPAA"]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Compute Guidelines V2",
+    "content": "TechCorp prioritizes Spot Instances for non-critical batch processing. Customer-facing APIs must run on On-Demand or Reserved instances to guarantee 99.9% SLA. Use C5 or M5 instance families for compute-intensive workloads.",
+    "metadata": {
+      "version": "2.0",
+      "status": "CURRENT",
+      "effective_date": "2023-06-01",
+      "applies_to": ["production", "staging"],
+      "security_level": "internal"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Security Standards 2024",
+    "content": "All S3 buckets must have public access blocked by default. IAM roles must adhere to least privilege. Production access requires VPN + MFA. All API endpoints must implement rate limiting of 1000 requests/minute per client.",
+    "metadata": {
+      "version": "3.0",
+      "status": "CURRENT",
+      "effective_date": "2024-01-01",
+      "applies_to": ["all"],
+      "security_level": "confidential",
+      "compliance_tags": ["SOC2", "ISO27001"]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Security Standards 2024 - EMEA Addendum",
+    "content": "In addition to global security standards, EMEA regions must comply with GDPR data residency requirements. All customer data must be stored in eu-west-1 or eu-central-1. Data retention limited to 90 days unless explicit consent obtained.",
+    "metadata": {
+      "version": "3.1",
+      "status": "CURRENT",
+      "effective_date": "2024-03-01",
+      "extends": 4,
+      "applies_to": ["emea-production"],
+      "security_level": "confidential",
+      "compliance_tags": ["GDPR", "SOC2"]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Incident Response Protocol",
+    "content": "P0 incidents require immediate notification to on-call engineer and CTO. Rollback procedures must be initiated within 15 minutes. Post-mortem required within 48 hours.",
+    "metadata": {
+      "version": "1.0",
+      "status": "CURRENT",
+      "effective_date": "2023-09-01",
+      "applies_to": ["production"],
+      "security_level": "confidential"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Database Encryption Standards - UPDATED",
+    "content": "All production databases must use AES-256 encryption. Encryption keys must be rotated every 90 days. Database credentials must be stored in AWS Secrets Manager with automatic rotation enabled.",
+    "metadata": {
+      "version": "2.1",
+      "status": "CURRENT",
+      "effective_date": "2024-06-01",
+      "supersedes": 8,
+      "applies_to": ["production"],
+      "security_level": "highly-confidential",
+      "compliance_tags": ["PCI-DSS", "SOC2"]
+    }
+  },
+  {
+    "id": 8,
+    "title": "Database Encryption Standards",
+    "content": "Production databases should use encryption at rest. Keys can be managed manually. Rotation recommended annually.",
+    "metadata": {
+      "version": "1.0",
+      "status": "DEPRECATED",
+      "deprecated_date": "2024-06-01",
+      "replaced_by": 7,
+      "applies_to": ["production"],
+      "security_level": "internal"
+    }
+  },
+  {
+    "id": 9,
+    "title": "Cost Optimization Guidelines - Finance Approved",
+    "content": "Engineering teams have budget caps: $50K/month for non-production, $200K/month for production. Unused resources must be terminated within 7 days. Reserved Instance purchases require VP approval.",
+    "metadata": {
+      "version": "1.0",
+      "status": "CURRENT",
+      "effective_date": "2024-01-15",
+      "applies_to": ["all"],
+      "security_level": "internal",
+      "authority": "CFO"
+    }
+  },
+  {
+    "id": 10,
+    "title": "AI/ML Model Deployment Policy",
+    "content": "All AI models must undergo bias testing before production deployment. Model inference endpoints must log all requests for audit purposes. Models must be versioned using semantic versioning.",
+    "metadata": {
+      "version": "1.0",
+      "status": "CURRENT",
+      "effective_date": "2024-02-01",
+      "applies_to": ["production"],
+      "security_level": "confidential"
+    }
+  },
+  {
+    "id": 11,
+    "title": "Cafeteria Menu - Week 42",
+    "content": "Monday: Pizza. Tuesday: Tacos. Please note that the espresso machine is currently undergoing maintenance.",
+    "metadata": {
+      "version": "1.0",
+      "status": "CURRENT",
+      "effective_date": "2024-10-14",
+      "applies_to": [],
+      "security_level": "public"
+    }
+  },
+  {
+    "id": 12,
+    "title": "Holiday Party Logistics",
+    "content": "The party will be held at the downtown Hilton. Please bring your ID badge. No laptops allowed.",
+    "metadata": {
+      "version": "1.0",
+      "status": "CURRENT",
+      "effective_date": "2024-12-01",
+      "applies_to": [],
+      "security_level": "public"
+    }
+  },
+  {
+    "id": 13,
+    "title": "Legacy On-Prem Server Maintenance",
+    "content": "For the old rack in the basement (Project X), reboot it manually if the red light blinks. Do not apply cloud security policies to this isolated network.",
+    "metadata": {
+      "version": "1.0",
+      "status": "LEGACY",
+      "effective_date": "2018-03-01",
+      "applies_to": ["on-premise"],
+      "security_level": "internal"
+    }
+  },
+  {
+    "id": 14,
+    "title": "Disaster Recovery Plan - CONFIDENTIAL",
+    "content": "RTO for critical systems: 4 hours. RPO: 1 hour. Failover datacenter located in us-west-2. Annual DR drills mandatory. Backup encryption keys stored in hardware security modules at two geographic locations.",
+    "metadata": {
+      "version": "2.0",
+      "status": "CURRENT",
+      "effective_date": "2024-01-01",
+      "applies_to": ["production"],
+      "security_level": "highly-confidential",
+      "access_requires": ["director-level", "security-team"]
+    }
+  },
+  {
+    "id": 15,
+    "title": "Third-Party Vendor Policy",
+    "content": "All vendors must complete security questionnaire. Vendor access limited to 90 days, renewable with approval. Vendors cannot access production databases directly.",
+    "metadata": {
+      "version": "1.0",
+      "status": "CURRENT",
+      "effective_date": "2023-11-01",
+      "applies_to": ["all"],
+      "security_level": "internal"
+    }
+  }
+]
